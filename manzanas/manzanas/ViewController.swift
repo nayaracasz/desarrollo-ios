@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblTotalNaranjas: UILabel!
     @IBOutlet weak var lblManzanasRestantes: UILabel!
     @IBOutlet weak var indicador: UIActivityIndicatorView!
+    @IBOutlet weak var lblTitulo: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -72,6 +73,23 @@ class ViewController: UIViewController {
         } else {
             switchCaptura.setOn(true, animated: false)
             txtManzanas.isEnabled = false
+        }
+    }
+    @IBAction func SeleccionarEquipo(_ sender: UISegmentedControl) {
+        print("Total de segmentos es \(sender.numberOfSegments)")
+        print("El segmento seleccionado es \(sender.selectedSegmentIndex)")
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            lblTitulo.textColor = .yellow
+        case 1:
+            lblTitulo.textColor = .systemRed
+        case 2:
+            lblTitulo.textColor = .systemYellow
+        case 3:
+            lblTitulo.textColor = .red
+        default:
+            lblTitulo.textColor = .black
         }
     }
 }

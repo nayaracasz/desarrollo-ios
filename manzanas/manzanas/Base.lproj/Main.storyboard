@@ -18,41 +18,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INTERCAMBIO DE MANZANAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdx-XR-vbT">
-                                <rect key="frame" x="49" y="107" width="294" height="24"/>
+                                <rect key="frame" x="49" y="146" width="294" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Naranjas obtenidas:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC8-SF-gW8">
-                                <rect key="frame" x="121" y="325" width="151" height="21"/>
+                                <rect key="frame" x="121" y="364" width="151" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.87659801136363635" green="0.39163490025457354" blue="0.074444358751068862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjI-Hh-ARw">
-                                <rect key="frame" x="156" y="354" width="81" height="58"/>
+                                <rect key="frame" x="156" y="393" width="81" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                 <color key="textColor" red="0.87659801140000004" green="0.39163490029999998" blue="0.074444358749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manzanas restantes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPU-uZ-J70">
-                                <rect key="frame" x="117" y="440" width="158" height="21"/>
+                                <rect key="frame" x="117" y="479" width="158" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.77589400770000005" green="0.13992333139999999" blue="0.13441887659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cantidad de manzanas" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="beu-Vk-qB7">
-                                <rect key="frame" x="95" y="162" width="202" height="34"/>
+                                <rect key="frame" x="95" y="201" width="202" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOU-3e-Ndg">
-                                <rect key="frame" x="131" y="204" width="131" height="35"/>
+                                <rect key="frame" x="131" y="243" width="131" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Intercambiar">
@@ -63,14 +63,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzW-Sd-CXl">
-                                <rect key="frame" x="156" y="469" width="81" height="58"/>
+                                <rect key="frame" x="156" y="508" width="81" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                 <color key="textColor" red="0.77589400770000005" green="0.13992333139999999" blue="0.13441887659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxj-I2-GJr">
-                                <rect key="frame" x="172" y="268" width="49" height="31"/>
+                                <rect key="frame" x="172" y="307" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.77734082940000004" green="0.13892588019999999" blue="0.13342767950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -78,17 +78,30 @@
                                 </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="14" translatesAutoresizingMaskIntoConstraints="NO" id="rpH-XN-9wq">
-                                <rect key="frame" x="47" y="564" width="298" height="30"/>
+                                <rect key="frame" x="47" y="603" width="298" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="SeleccionarSemestre:" destination="BYZ-38-t0r" eventType="valueChanged" id="2ty-5t-d7E"/>
                                 </connections>
                             </slider>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3Di-ut-q86">
-                                <rect key="frame" x="186" y="649" width="20" height="20"/>
+                                <rect key="frame" x="186" y="688" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.78954141105874687" green="0.13597354767932171" blue="0.18956700227196241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cxb-gC-vvg">
+                                <rect key="frame" x="56" y="89" width="280" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="America"/>
+                                    <segment title="Chivas"/>
+                                    <segment title="Tigres"/>
+                                    <segment title="Barcelona"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SeleccionarEquipo:" destination="BYZ-38-t0r" eventType="valueChanged" id="plb-NU-gYE"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -96,6 +109,7 @@
                     <connections>
                         <outlet property="indicador" destination="3Di-ut-q86" id="JkR-yr-7QG"/>
                         <outlet property="lblManzanasRestantes" destination="CzW-Sd-CXl" id="JiW-a9-sHT"/>
+                        <outlet property="lblTitulo" destination="tdx-XR-vbT" id="z89-OJ-Cru"/>
                         <outlet property="lblTotalNaranjas" destination="PjI-Hh-ARw" id="jzg-ar-5q2"/>
                         <outlet property="switchCaptura" destination="gxj-I2-GJr" id="wUZ-GA-kDe"/>
                         <outlet property="txtManzanas" destination="beu-Vk-qB7" id="GzI-Hf-hrB"/>
