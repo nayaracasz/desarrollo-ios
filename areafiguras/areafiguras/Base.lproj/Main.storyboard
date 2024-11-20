@@ -24,6 +24,9 @@
                                     <segment title="Rectangulo"/>
                                     <segment title="Triangulo"/>
                                 </segments>
+                                <connections>
+                                    <action selector="SeleccionarFigura:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZkT-W4-Zs5"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ancho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncN-mC-eoF">
                                 <rect key="frame" x="107" y="157" width="49" height="21"/>
@@ -70,6 +73,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Calcular area"/>
+                                <connections>
+                                    <action selector="MostrarResultadoArea:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K5o-SL-Vv7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -78,7 +84,11 @@
                     <connections>
                         <outlet property="lblMedida1" destination="ncN-mC-eoF" id="eQB-pF-7sM"/>
                         <outlet property="lblMedida2" destination="cSh-m6-zlw" id="fXR-PR-EuB"/>
+                        <outlet property="lblResultado" destination="par-WX-m87" id="vep-pe-Gth"/>
                         <outlet property="lblTextoResultado" destination="cSh-m6-zlw" id="y14-V9-fJ3"/>
+                        <outlet property="segFiguras" destination="t8m-gg-nf8" id="HV0-W9-VYh"/>
+                        <outlet property="txtMedida1" destination="Q4g-Oj-m7M" id="jaA-wn-Tac"/>
+                        <outlet property="txtMedida2" destination="mxi-Ji-kut" id="bDx-bz-ERu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
