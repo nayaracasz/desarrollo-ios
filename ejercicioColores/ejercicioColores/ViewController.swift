@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ejercicioColores
+//  ejercicioColores/Users/samsungboot/Desktop/desarrollo-ios/ejercicioColores/ejercicioColores/ViewController.swift
 //
 //  Created by SamsungBoot on 19/11/24.
 //
