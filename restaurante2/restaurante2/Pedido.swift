@@ -1,8 +1,8 @@
 //
 //  Pedido.swift
-//  pedido
+//  restaurante2
 //
-//  Created by nayara on 02/12/24.
+//  Created by SamsungBoot on 05/12/24.
 //
 
 class Pedido {

@@ -35,7 +35,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case 4:
             imgMenu.image = UIImage(named: "postre")
         default:
-            imgMenu.image = nil
+            imgMenu.image = nil                                 
         }
     }
     
@@ -51,26 +51,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //arreglo del menu de productos
     let menu = ["Hamburguesa sencilla", "Hamburguesa con queso", "Papas fritas", "Refresco", "Postre"]
-    var mesaUno : Pedido
-    var mesaDos : Pedido
-    var mesaTres : Pedido
+    var mesaUno : Pedido = Pedido()
+    var mesaDos : Pedido = Pedido()
+    var mesaTres : Pedido = Pedido()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         pkvMenu.delegate = self
         pkvMenu.dataSource = self
+        lblProductos.text = ""
+        lblTotal.text = ""
     }
     
-    //seleccionar mesa
+    // seleccionar mesa
     @IBAction func SeleccionarMesa(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            mesaUno = Pedido()
+            mesaUno = Pedido(0, 0, 0, 0, 0)
         case 1:
-            mesaDos = Pedido()
+            mesaDos = Pedido(0, 0, 0, 0, 0)
         case 2:
-            mesaTres = Pedido()
+            mesaTres = Pedido(0, 0, 0, 0, 0)
         default:
             break
         }
@@ -78,27 +80,35 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // agregar producto
     @IBAction func AgregarProducto(_ sender: Any) {
-        var cantidadProductos = Double(lblCantidad.text!) ?? 0.0
+        let cantidadProductos = Double(lblCantidad.text!) ?? 0.0
+        let selectedRow = pkvMenu.selectedRow(inComponent: 0) // Cambiado a 0
+        
         switch segMesas.selectedSegmentIndex {
         case 0:
-            switch pkvMenu.selectedRow(inComponent: <#T##Int#>) {
+            switch selectedRow {
             case 0:
-                mesaUno.HamburguesasSencillas = (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                mesaUno.HamburguesasSencillas += (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                lblProductos.text! += "Hamburguesas sencillas: \(mesaUno.HamburguesasSencillas)\n"
             case 1:
-                mesaUno.HamburguesasConQueso = (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                mesaUno.HamburguesasConQueso += (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                lblProductos.text! += "Hamburguesas con queso: \(mesaUno.HamburguesasConQueso)\n"
             case 2:
-                mesaUno.PapasFritas = (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                mesaUno.PapasFritas += (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                lblProductos.text! += "Papas fritas: \(mesaUno.PapasFritas)\n"
             case 3:
-                mesaUno.Refrescos = (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                mesaUno.Refrescos += (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                lblProductos.text! += "Refrescos: \(mesaUno.Refrescos)\n"
             case 4:
-                mesaUno.Postres = (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                mesaUno.Postres += (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                lblProductos.text! += "Postres: \(mesaUno.Postres)\n"
             default:
                 break
             }
         case 1:
-            switch pkvMenu.selectedRow(inComponent: <#T##Int#>) {
+            switch selectedRow {
             case 0:
                 mesaDos.HamburguesasSencillas = (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
+                lblProductos.text! += "Hamburguesas sencillas: \(mesaDos.HamburguesasSencillas)\n"
             case 1:
                 mesaDos.HamburguesasConQueso = (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
             case 2:
@@ -111,7 +121,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 break
             }
         case 2:
-            switch pkvMenu.selectedRow(inComponent: <#T##Int#>) {
+            switch selectedRow {
             case 0:
                 mesaTres.HamburguesasSencillas = (swtCupon.isOn) ? (cantidadProductos / 2) : cantidadProductos
             case 1:
@@ -131,15 +141,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func AgregarPropina(_ sender: Any) {
-        
+        // Código para agregar propina
     }
     
     @IBAction func CalcularTotal(_ sender: Any) {
-        
+        // Código para calcular el total
     }
     
-    
     @IBAction func ColocarCantidad(_ sender: UIStepper) {
-        lblCantidad.text = String(sender.value)
+        lblCantidad.text = String(Int(sender.value))
     }
 }
