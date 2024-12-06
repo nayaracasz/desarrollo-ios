@@ -47,7 +47,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     // arreglo del menu
-    let menu = ["Hamburguesa sencilla", "Hamburguesa con queso", "Papas fritas", "Refresco", "Postre"]
+    let menu = ["Hamburguesa sencilla ($40)", "Hamburguesa con queso ($50)", "Papas fritas ($20)", "Refresco ($12)", "Postre (8)"]
     // objetos para los pedidos de las mesas
     var mesaUno : Pedido = Pedido()
     var mesaDos : Pedido = Pedido()
@@ -86,66 +86,56 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func AgregarProducto(_ sender: UIButton) {
-        let selectRow = pkvMenu.selectedRow(inComponent: 0)
+        let selectRow = pkvMenu.selectedRow(inComponent: 0) // producto seleccionado
+        let cantidad = Double(lblCantidad.text!) ?? 0 // cantidad que solicitan
+        let tieneCupon = switchCupon.isOn // si tiene cupon
+        let cantidadReal = tieneCupon ? (cantidad / 2) : cantidad // cantidad ajustada de acuerdo al cupon
+        
+        var pedidoActual: Pedido
+        
         switch segMesas.selectedSegmentIndex {
         case 0:
-            print("seleccionando mesa 1")
-            switch selectRow {
-            case 0:
-                if switchCupon.isOn {
-                    mesaUno.HamburguesasSencillas = (Double(lblCantidad.text!) ?? 0) / 2
-                    lblPedidoMesa.text! += "Hamburguesas sencillas (con cupón): \(Int(mesaUno.HamburguesasSencillas * 2))\n"
-                } else {
-                    mesaUno.HamburguesasSencillas = Double(lblCantidad.text!) ?? 0
-                    lblPedidoMesa.text! += "Hamburguesas sencillas: \(Int(mesaUno.HamburguesasSencillas))\n"
-                }
-            case 1:
-                if switchCupon.isOn {
-                    mesaUno.HamburguesasConQueso = (Double(lblCantidad.text!) ?? 0) / 2
-                    lblPedidoMesa.text! += "Hamburguesas con queso (con cupón): \(Int(mesaUno.HamburguesasConQueso * 2))\n"
-                } else {
-                    mesaUno.HamburguesasConQueso = Double(lblCantidad.text!) ?? 0
-                    lblPedidoMesa.text! += "Hamburguesas con queso: \(Int(mesaUno.HamburguesasConQueso))\n"
-                }
-            case 2:
-                if switchCupon.isOn {
-                    mesaUno.PapasFritas = (Double(lblCantidad.text!) ?? 0) / 2
-                    lblPedidoMesa.text! += "Papas fritas (con cupón): \(Int(mesaUno.PapasFritas * 2))\n"
-                } else {
-                    mesaUno.PapasFritas = Double(lblCantidad.text!) ?? 0
-                    lblPedidoMesa.text! += "Papas fritas: \(Int(mesaUno.PapasFritas))\n"
-                }
-            case 3:
-                if switchCupon.isOn {
-                    mesaUno.Refrescos = (Double(lblCantidad.text!) ?? 0) / 2
-                    lblPedidoMesa.text! += "Refrescos (con cupón): \(Int(mesaUno.Refrescos * 2))\n"
-                } else {
-                    mesaUno.Refrescos = Double(lblCantidad.text!) ?? 0
-                    lblPedidoMesa.text! += "Refrescos: \(Int(mesaUno.Refrescos))\n"
-                }
-            case 4:
-                if switchCupon.isOn {
-                    mesaUno.Postres = (Double(lblCantidad.text!) ?? 0) / 2
-                    lblPedidoMesa.text! += "Postres (con cupón): \(Int(mesaUno.Postres * 2))\n"
-                } else {
-                    mesaUno.Postres = Double(lblCantidad.text!) ?? 0
-                    lblPedidoMesa.text! += "Postres: \(Int(mesaUno.Postres))\n"
-                }
-            default:
-                break
-            }
+            pedidoActual = mesaUno
         case 1:
-            print("seleccionando mesa 2")
+            pedidoActual = mesaDos
         case 2:
-            print("seleccionando mesa 3")
+            pedidoActual = mesaTres
+        default:
+            return
+        }
+
+        switch selectRow {
+        case 0: // hamburguesa sencilla
+            pedidoActual.HamburguesasSencillas += cantidadReal
+        case 1: // hamburguesa con queso
+            pedidoActual.HamburguesasConQueso += cantidadReal
+        case 2: // papas fritas
+            pedidoActual.PapasFritas += cantidadReal
+        case 3: // refrescos
+            pedidoActual.Refrescos += cantidadReal
+        case 4: // postres
+            pedidoActual.Postres += cantidadReal
+        default:
+            return
+        }
+        
+        switch segMesas.selectedSegmentIndex {
+        case 0:
+            mesaUno = pedidoActual
+        case 1:
+            mesaDos = pedidoActual
+        case 2:
+            mesaTres = pedidoActual
         default:
             break
         }
+        
+        lblPedidoMesa.text = pedidoActual.generarResumen(cuponActivado: tieneCupon)
     }
     
     @IBAction func CalcularTotal(_ sender: UIButton) {
-        var propina: Double = 
-        lblTotal.text! += "Subtotal: "
+//        var propina: Double =
+//        lblTotal.text! += "Subtotal: "
     }
     
     

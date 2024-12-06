@@ -56,13 +56,41 @@ class Pedido {
         self.postres = postres
     }
     
+    // resumen del pedido antes de calcular total
+    func generarResumen(cuponActivado : Bool) -> String {
+        var resumen = ""
+        
+        // agregar solo los productos que tienen cantidades mayores a 0
+        if HamburguesasSencillas > 0 {
+            let cantidadVisual = cuponActivado ? (HamburguesasSencillas / 2) : HamburguesasSencillas
+            resumen += "Hamburguesas sencillas: \(Int(cantidadVisual))\n"
+        }
+        if HamburguesasConQueso > 0 {
+            let cantidadVisual = cuponActivado ? (HamburguesasConQueso * 2) : HamburguesasConQueso
+            resumen += "Hamburguesas con queso: \(Int(cantidadVisual))\n"
+        }
+        if PapasFritas > 0 {
+            let cantidadVisual = cuponActivado ? (PapasFritas * 2) : PapasFritas
+            resumen += "Papas fritas: \(Int(cantidadVisual))\n"
+        }
+        if Refrescos > 0 {
+            let cantidadVisual = cuponActivado ? (Refrescos * 2) : Refrescos
+            resumen += "Refrescos: \(Int(cantidadVisual))\n"
+        }
+        if Postres > 0 {
+            let cantidadVisual = cuponActivado ? (Postres * 2) : Postres
+            resumen += "Postres: \(Int(cantidadVisual))\n"
+        }
+        
+        return resumen
+    }
+    
     //calcular total
     func CalcularTotal() -> Double {
         let totalHamburguesasSencillas = HamburguesasSencillas * 40
         let totalHamburguesasConQueso = HamburguesasConQueso * 50
         let totalPapasFritas = PapasFritas * 20
         let totalResfrescos = Refrescos * 40
-        
         let totalPostres = Postres * 40
         return totalHamburguesasSencillas + totalHamburguesasConQueso + totalPapasFritas + totalResfrescos + totalPostres
     }
